@@ -1,0 +1,3 @@
+import{useState}from'react';import{render,screen}from'@testing-library/react';import userEvent from'@testing-library/user-event';import{describe,expect,it}from'vitest';
+function RapidAdd(){const[rows,setRows]=useState<string[]>([]);const current={value:rows};const add=()=>setRows(previous=>{const next=[...previous,crypto.randomUUID()];current.value=next;return next});return <><button onClick={add}>Add</button><output>{rows.length}</output></>}
+describe('rapid add actions',()=>{it('preserves every click',async()=>{const user=userEvent.setup();render(<RapidAdd/>);const add=screen.getByRole('button',{name:'Add'});await Promise.all([user.click(add),user.click(add),user.click(add)]);expect(screen.getByRole('status')).toHaveTextContent('3')})});
