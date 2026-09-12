@@ -1,0 +1,1 @@
+export type Row=Record<string,string|boolean|number>;export type Project={id:string;title:string;fields:Record<string,string>;method:string;methodDraft:string;subtype:string;approach:string;theory:string;ethics:boolean[];dataSources:Row[];literature:Row[];tasks:Row[];journal:Row[];codes:Row[];datasets:Row[];deliverables:string[];updatedAt:string};

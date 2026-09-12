@@ -1,0 +1,1 @@
+export function summarize(values:Array<number|null>){const valid=values.filter((v):v is number=>typeof v==='number'&&Number.isFinite(v));return{n:valid.length,missing:values.length-valid.length,mean:valid.length?valid.reduce((a,b)=>a+b,0)/valid.length:null,min:valid.length?Math.min(...valid):null,max:valid.length?Math.max(...valid):null}}

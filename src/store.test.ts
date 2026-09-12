@@ -1,0 +1,2 @@
+import{describe,expect,it}from'vitest';import{blankProject,capped}from'./store';
+describe('project safeguards',()=>{it('caps suggestions at three',()=>expect(capped([1,2,3,4])).toEqual([1,2,3]));it('preserves unrelated work when method changes',()=>{const p=blankProject();p.fields.question='My words';const changed={...p,method:'case'};expect(changed.fields.question).toBe('My words')});it('creates an incomplete project safely',()=>expect(blankProject().dataSources).toEqual([]))});

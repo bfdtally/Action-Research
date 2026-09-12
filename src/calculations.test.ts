@@ -1,0 +1,1 @@
+import{describe,expect,it}from'vitest';import{summarize}from'./calculations';describe('descriptive calculations',()=>{it('reports missing values without replacing them',()=>expect(summarize([2,null,4])).toEqual({n:2,missing:1,mean:3,min:2,max:4}));it('handles empty data',()=>expect(summarize([]).mean).toBeNull())});
